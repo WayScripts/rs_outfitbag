@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'Way Scripts | Outfit Bag'
 description '[FREE] Outfit bag'
-version '1.0.0'
+version '1.0.1'
 
 
 shared_scripts {

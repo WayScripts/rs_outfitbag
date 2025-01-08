@@ -3,6 +3,7 @@ Config = {}
 Config.Debug = true -- If true, you will get an additional F8 prints for what's going on
 Config.Appearance = 'illenium'
 Config.Notify = 'ox'
+Config.Inventory = 'ox' -- ox = Ox inventory, qs = Qs inventory, codem = CodeM inventory
 
 
 Config.Item = {
