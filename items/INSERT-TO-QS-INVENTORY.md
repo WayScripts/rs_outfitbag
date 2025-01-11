@@ -7,6 +7,6 @@
     useable = true,
     description = 'You can change outfit there',
     client = {
-        event = 'way_outfitbag:place'
+       export = 'way_outfitbag.place'
     },
 }
