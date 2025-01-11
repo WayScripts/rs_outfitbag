@@ -26,6 +26,4 @@ dependencies {
 	'es_extended'
  }
 
-exports = {
-       'place'
-}
+export 'place'
