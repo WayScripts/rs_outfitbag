@@ -19,6 +19,10 @@ if Config.Command.enabled then
     end)
 end
 
+exports('place', function()
+ TriggerEvent('way_outfitbag:place')
+end)
+
 RegisterNetEvent('way_outfitbag:placed')
 AddEventHandler('way_outfitbag:placed',function ()
     DebugPrint('Bag has been placed')
