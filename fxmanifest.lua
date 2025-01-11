@@ -25,4 +25,7 @@ dependencies {
 	'ox_target',
 	'es_extended'
  }
- 
+
+exports = {
+       'place'
+}
