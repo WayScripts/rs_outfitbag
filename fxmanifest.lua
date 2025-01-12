@@ -22,8 +22,7 @@ client_scripts {
 
 dependencies {
 	'ox_lib',
-	'ox_target',
-	'es_extended'
+	'ox_target'
  }
 
 export 'place'
