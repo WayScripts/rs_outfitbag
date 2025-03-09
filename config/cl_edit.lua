@@ -6,8 +6,8 @@ function Notify(title,desc)
           position = 'top',
           icon = 'shirt',
       })
-     elseif Config.Notify == 'wayscripts' then
-          exports['way_notifystyle2']:showNotification('info', title, desc, 5000, 'top-right')
+     elseif Config.Notify == 'rsscripts' then
+          exports['rs_notifystyle2']:showNotification('info', title, desc, 5000, 'top-right')
      elseif Config.Notify == 'custom' then
             -- Add Your custom notify
      end
