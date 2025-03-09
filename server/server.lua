@@ -1,5 +1,5 @@
-RegisterServerEvent('way_outfitbag:placedBag')
-AddEventHandler('way_outfitbag:placedBag',function ()
+RegisterServerEvent('rs_outfitbag:placedBag')
+AddEventHandler('rs_outfitbag:placedBag',function ()
     -- Handle inventory based on Config.Inventory
     if Config.Inventory == 'ox' then
      exports.ox_inventory:RemoveItem(source, Config.Item.item, 1, nil, nil, nil)
@@ -12,8 +12,8 @@ AddEventHandler('way_outfitbag:placedBag',function ()
     end
 end)
 
-RegisterServerEvent('way_outfitbag:pickedupBag')
-AddEventHandler('way_outfitbag:pickedupBag',function ()
+RegisterServerEvent('rs_outfitbag:pickedupBag')
+AddEventHandler('rs_outfitbag:pickedupBag',function ()
     -- Handle inventory based on Config.Inventory
     if Config.Inventory == 'ox' then
         exports.ox_inventory:AddItem(source, Config.Item.item, 1, nil, nil, nil)
