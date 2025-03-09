@@ -1,8 +1,8 @@
-# README for `way_outfitbag` Script
+# README for `rs_outfitbag` Script
 
 ## Overview
 
-The `way_outfitbag` script adds functionality to interact with "outfit bags" in a FiveM server, allowing players to place, pick up, and open them for outfit management. This script is highly customizable and integrates with different notification systems and appearance systems.
+The `rs_outfitbag` script adds functionality to interact with "outfit bags" in a FiveM server, allowing players to place, pick up, and open them for outfit management. This script is highly customizable and integrates with different notification systems and appearance systems.
 
 ---
 
@@ -19,12 +19,12 @@ The `way_outfitbag` script adds functionality to interact with "outfit bags" in 
 ## Installation
 
 1. **Download and Add the Script**  
-   Place the `way_outfitbag` folder in your FiveM server's `resources` directory.
+   Place the `rs_outfitbag` folder in your FiveM server's `resources` directory.
 
 2. **Configure `server.cfg`**  
    Add the following line to your `server.cfg` to ensure the resource starts:
    ```bash
-   ensure way_outfitbag
+   ensure rs_outfitbag
    ```
 
 3. **Dependencies**  
@@ -46,7 +46,7 @@ Set `Config.Debug = true` to enable detailed logs for troubleshooting.
 
 ### Notification System
 - `Config.Notify = 'ox'`: Use `ox_notify` for alerts.
-- Set to `'wayscripts'` or `'custom'` for other notification systems.
+- Set to `'rsscripts'` or `'custom'` for other notification systems.
 
 ### Command
 - Command to place bags: `/outfitbag`  
@@ -76,7 +76,7 @@ Config.Prop = 'bkr_prop_duffel_bag_01a'
 
 ### Place a Bag
 1. Ensure the player has the required item (`outfitbag` by default).
-2. Use the `/outfitbag` command or trigger the `way_outfitbag:place` event.
+2. Use the `/outfitbag` command or trigger the `rs_outfitbag:place` event.
 
 ### Open a Bag
 Approach the placed bag and interact with it using the target system (`ox_target`).
@@ -89,19 +89,19 @@ Approach the placed bag and interact with it to pick it up.
 ## Events
 
 ### Client Events
-- `way_outfitbag:open`: Opens the outfit bag interface.
-- `way_outfitbag:placed`: Triggered when a bag is placed.
-- `way_outfitbag:pickedup`: Triggered when a bag is picked up.
+- `rs_outfitbag:open`: Opens the outfit bag interface.
+- `rs_outfitbag:placed`: Triggered when a bag is placed.
+- `rs_outfitbag:pickedup`: Triggered when a bag is picked up.
 
 ### Server Events
-- `way_outfitbag:placedBag`: Handles server-side logic when a bag is placed.
-- `way_outfitbag:pickedupBag`: Handles server-side logic when a bag is picked up.
+- `rs_outfitbag:placedBag`: Handles server-side logic when a bag is placed.
+- `rs_outfitbag:pickedupBag`: Handles server-side logic when a bag is picked up.
 
 ---
 
 ## Debugging
 
-Set `Config.Debug = true` to enable console prints. Look for messages prefixed with `[Way Outfit Bag | DEBUG]` to track actions and troubleshoot issues.
+Set `Config.Debug = true` to enable console prints. Look for messages prefixed with `[RS Outfit Bag | DEBUG]` to track actions and troubleshoot issues.
 
 ---
 
@@ -134,4 +134,4 @@ end
 ---
 
 ## Credits
-Developed for FiveM by **Way Scripts**.
+Developed for FiveM by **RS Scripts**.
