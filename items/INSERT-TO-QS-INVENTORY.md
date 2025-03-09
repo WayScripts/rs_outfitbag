@@ -7,6 +7,6 @@
     useable = true,
     description = 'You can change outfit there',
     client = {
-       export = 'way_outfitbag.place'
+       export = 'rs_outfitbag.place'
     },
 }
