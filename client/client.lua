@@ -1,11 +1,11 @@
 local outfitbags = {}
 
 function DebugPrint(text)
-    if Config.Debug then print("[Way Outfit Bag | DEBUG] "..text) end
+    if Config.Debug then print("[ Outfit Bag | DEBUG] "..text) end
 end
 
-RegisterNetEvent('way_outfitbag:open')
-AddEventHandler('way_outfitbag:open',function ()
+RegisterNetEvent('rs_outfitbag:open')
+AddEventHandler('rs_outfitbag:open',function ()
     DebugPrint('Bag has been opened')
     openAppearance()
 end)
@@ -15,22 +15,22 @@ if Config.Command.enabled then
     -- Register the full command
     RegisterCommand(Config.Command.command, function()
         print('Bag has been opened')
-        TriggerEvent('way_outfitbag:place')
+        TriggerEvent('rs_outfitbag:place')
     end)
 end
 
 exports('place', function()
- TriggerEvent('way_outfitbag:place')
+ TriggerEvent('rs_outfitbag:place')
 end)
 
-RegisterNetEvent('way_outfitbag:placed')
-AddEventHandler('way_outfitbag:placed',function ()
+RegisterNetEvent('rs_outfitbag:placed')
+AddEventHandler('rs_outfitbag:placed',function ()
     DebugPrint('Bag has been placed')
-    TriggerServerEvent('way_outfitbag:placedBag')
+    TriggerServerEvent('rs_outfitbag:placedBag')
 end)
 
-RegisterNetEvent('way_outfitbag:pickedup')
-AddEventHandler('way_outfitbag:pickedup',function ()
+RegisterNetEvent('rs_outfitbag:pickedup')
+AddEventHandler('rs_outfitbag:pickedup',function ()
     DebugPrint('Progress bar for picking up bag has started')
     lib.progressCircle({
         duration = 1000,
@@ -49,7 +49,7 @@ AddEventHandler('way_outfitbag:pickedup',function ()
         }
     })
     DebugPrint('Progress bar for picking up bag has completed')
-    TriggerServerEvent('way_outfitbag:pickedupBag')
+    TriggerServerEvent('rs_outfitbag:pickedupBag')
     DebugPrint('Bag has been added to player\'s inventory')
     local outfitbag = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.1, GetHashKey(Config.Prop))
     DebugPrint('Bag has been deleted')
@@ -70,7 +70,7 @@ local options = {
             end
             return true
         end,
-        event = 'way_outfitbag:open',
+        event = 'rs_outfitbag:open',
         icon = 'fa-solid fa-shirt',
         label = Language.open,
         distance = Config.Distance + 0.1
@@ -88,7 +88,7 @@ local options = {
             end
             return true
         end,
-        event = 'way_outfitbag:pickedup',
+        event = 'rs_outfitbag:pickedup',
         icon = 'fa-solid fa-hand',
         label = Language.pickup,
         distance = Config.Distance + 0.1
@@ -98,8 +98,8 @@ local options = {
 DebugPrint('Added bag model to target options')
 exports.ox_target:addModel(Config.Prop, options)
 
-RegisterNetEvent('way_outfitbag:place')
-AddEventHandler('way_outfitbag:place',function ()
+RegisterNetEvent('rs_outfitbag:place')
+AddEventHandler('rs_outfitbag:place',function ()
     RequestModel(Config.Prop)
     while not HasModelLoaded(Config.Prop) do Citizen.Wait(10) DebugPrint('Loading bag model...') end
     local ped = PlayerPedId()
@@ -142,7 +142,7 @@ AddEventHandler('way_outfitbag:place',function ()
             },
         })
         Notify(Language.title, Language.placeditem)
-        TriggerEvent('way_outfitbag:placed')
+        TriggerEvent('rs_outfitbag:placed')
         local outfitbag = CreateObject(Config.Prop, x, y, z-1, true, false, false)
         SetEntityHeading(outfitbag, GetEntityHeading(ped))
         PlaceObjectOnGroundProperly(outfitbag)
@@ -178,7 +178,7 @@ function stopScript()
 end
 
 AddEventHandler('onResourceStart', function(resourceName)
-    local resourceName = 'way_outfitbag'
+    local resourceName = 'rs_outfitbag'
 
     if resourceName == GetCurrentResourceName() then
         for k, bag in pairs(outfitbags) do
